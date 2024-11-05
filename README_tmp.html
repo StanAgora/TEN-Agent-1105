@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>README.md</title>
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+    
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+html,footer,header{
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Custom MD PDF CSS
+ */
+html,footer,header{
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+
+ }
+body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+<link rel="stylesheet" href="file:///Volumes/CrucialX6/LIVE_CODE/TEN-Agent-1105/R%3A%5C2.Travail%5C1.Enseignement%5CCours%5C_1.Outils%5C2.Developpement%5C1.SCSS%5Cmain.css" type="text/css"><link rel="stylesheet" href="file:///Volumes/CrucialX6/LIVE_CODE/TEN-Agent-1105/D%3A%5Crdaros%5CCours%5C_1.Outils%5C2.Developpement%5C1.SCSS%5Cmain.css" type="text/css">
+</head>
+
+<body>
+    <p><img src="https://github.com/TEN-framework/docs/blob/main/assets/jpg/banner.jpg?raw=true" alt="TEN Agent banner"></p>
+<div align="center">
+</div><p><a href="https://twitter.com/intent/follow?screen_name=TenFramework"><img src="https://img.shields.io/twitter/follow/TenFramework?logo=X&amp;color=%20%23f5f5f5" alt="Follow on X"></a><br>
+<a href="https://github.com/TEN-framework/ten-agent/discussions/"><img src="https://img.shields.io/github/discussions/TEN-framework/ten-agent?labelColor=%20%23FDB062&amp;color=%20%23f79009" alt="Discussion posts"></a><br>
+<a href="https://github.com/TEN-framework/ten-agent/graphs/commit-activity"><img src="https://img.shields.io/github/commit-activity/m/TEN-framework/ten-agent?labelColor=%20%237d89b0&amp;color=%20%235d6b98" alt="Commits"></a><br>
+<a href="https://github.com/TEN-framework/ten-agent/issues"><img src="https://img.shields.io/github/issues-search?query=repo%3ATEN-framework%2Ften-agent%20is%3Aclosed&amp;label=issues%20closed&amp;labelColor=green&amp;color=green" alt="Issues closed"></a><br>
+<a href="https://github.com/TEN-framework/ten-agent/pulls"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square" alt="PRs Welcome"></a><br>
+<a href="https://github.com/TEN-framework/ten-agent/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-Apache_2.0-blue.svg?labelColor=%20%23155EEF&amp;color=%20%23528bff" alt="GitHub license"></a></p>
+<p><a href="https://discord.gg/VnPftUzAMJ"><img src="https://dcbadge.vercel.app/api/server/VnPftUzAMJ" alt="Discord TEN Community"></a></p>
+<p><a href="https://GitHub.com/TEN-framework/ten-agent/watchers/?WT.mc_id=academic-105485-koreyst"><img src="https://img.shields.io/github/watchers/TEN-framework/ten-agent?style=social&amp;label=Watch" alt="GitHub watchers"></a><br>
+<a href="https://GitHub.com/TEN-framework/ten-agent/network/?WT.mc_id=academic-105485-koreyst"><img src="https://img.shields.io/github/forks/TEN-framework/ten-agent?style=social&amp;label=Fork" alt="GitHub forks"></a><br>
+<a href="https://GitHub.com/TEN-framework/ten-agent/stargazers/?WT.mc_id=academic-105485-koreyst"><img src="https://img.shields.io/github/stars/TEN-framework/ten-agent?style=social&amp;label=Star" alt="GitHub stars"></a></p>
+<p><a href="https://github.com/TEN-framework/ten-agent/blob/main/README.md"><img alt="README in English" src="https://img.shields.io/badge/English-lightgrey"></a><br>
+<a href="https://github.com/ten-framework/ten-agent/blob/main/docs/readmes/README-CN.md"><img alt="简体中文操作指南" src="https://img.shields.io/badge/简体中文-lightgrey"></a><br>
+<a href="https://github.com/ten-framework/ten-agent/blob/main/docs/readmes/README-JP.md"><img alt="日本語のREADME" src="https://img.shields.io/badge/日本語-lightgrey"></a><br>
+<a href="https://github.com/ten-framework/ten-agent/blob/main/docs/readmes/README-KR.md"><img alt="README in 한국어" src="https://img.shields.io/badge/한국어-lightgrey"></a><br>
+<a href="https://github.com/ten-framework/ten-agent/blob/main/docs/readmes/README-ES.md"><img alt="README en Español" src="https://img.shields.io/badge/Español-lightgrey"></a><br>
+<a href="https://github.com/ten-framework/ten-agent/blob/main/docs/readmes/README-FR.md"><img alt="README en Français" src="https://img.shields.io/badge/Français-lightgrey"></a><br>
+<a href="https://github.com/ten-framework/ten-agent/blob/main/docs/readmes/README-IT.md"><img alt="README in Italiano" src="https://img.shields.io/badge/Italiano-lightgrey"></a></p>
+<p><a href="https://doc.theten.ai/ten-agent/getting_started">Getting Started</a><br>
+<span>  •  </span><br>
+<a href="https://doc.theten.ai/ten-agent/create_a_hello_world_extension">Create Extensions</a><br>
+<span>  •  </span><br>
+<a href="https://github.com/TEN-framework/ten_framework">TEN Framework Repository</a></p>
+
+<br>
+<h2>&#x1F389; TEN Agent with OpenAI Realtime API and RTC</h2>
+<p>Try OpenAI Realtime API and RTC at <a href="https://agent.theten.ai">agent.theten.ai</a>.</p>
+<p>Combining OpenAI Realtime API for ultra-low latency with RTC’s AI noise suppression ensures smooth, high-quality interactions. On top of that, the seamless integration of weather and news tools makes TEN Agent even more versatile.</p>
+<p><img src="https://github.com/TEN-framework/docs/blob/main/assets/gif/weather-and-news.gif?raw=true" alt="TEN Agent with OpenAI Realtime API and RTC"></p>
+<br>
+<h2>TEN Agent Features</h2>
+<ul>
+<li>
+<p><strong>OpenAI Realtime API and RTC integration</strong>:<br>
+TEN Agent is the world-class multimodal AI agent to integrate the OpenAI Realtime API and RTC.</p>
+</li>
+<li>
+<p><strong>High-Performance Real-Time Multimodal Interactions</strong>:<br>
+Offers high-performance, low-latency solutions for complex audio-visual AI applications.</p>
+</li>
+<li>
+<p><strong>Multi-Language and Multi-Platform Support</strong> :<br>
+Supports extension development in C++, Go, Python, etc. Runs on Windows, Mac, Linux, and mobile devices.</p>
+</li>
+<li>
+<p><strong>Edge-Cloud Integration</strong>:<br>
+Flexibly combines edge and cloud-deployed extensions, balancing privacy, cost, and performance.</p>
+</li>
+<li>
+<p><strong>Flexibility Beyond Model Limitations</strong>:<br>
+Easily build complex AI applications through simple drag-and-drop programming, integrating audio-visual tools, databases, RAG, and more.</p>
+</li>
+<li>
+<p><strong>Real-Time Agent State Management</strong>:<br>
+Manages and adjusts agent behavior in real-time for dynamic responsiveness.</p>
+</li>
+</ul>
+<br>
+<h2>Ready-to-use Extensions</h2>
+<p><img src="https://github.com/TEN-framework/docs/blob/main/assets/jpg/extensions.jpg?raw=true" alt="Ready-to-use Extensions"></p>
+<br>
+<h2>Stay Tuned</h2>
+<p>Before we get started, be sure to star our repository and get instant notifications for all new releases!</p>
+<p><img src="https://github.com/TEN-framework/docs/blob/main/assets/gif/star_us_2.gif?raw=true" alt="TEN star us gif"></p>
+<!-- <br>
+<h2>TEN Agent</h2>
+
+[TEN Agent](https://agent.theten.ai)
+
+TEN Agent is a multimodal agent powered by [ TEN ](https://theten.ai), demonstrating its capabilities in speech, vision, and reasoning through  RAG from local documentation.
+
+And, if you choose to use OpenAI Realtime API, then the Vision and RAG won't be available.
+
+
+[![Showcase TEN multimodal agent](https://github.com/TEN-framework/docs/blob/main/assets/gif/features.gif?raw=true)](https://agent.theten.ai)
+<br> -->
+<br>
+<h2>How to build TEN Agent locally
+</h2><h3 id="prerequisites">Prerequisites</h3>
+<h4 id="keys">Keys</h4>
+<ul>
+<li>Agora <a href="https://docs.agora.io/en/video-calling/get-started/manage-agora-account?platform=web#create-an-agora-project"> App ID </a> and <a href="https://docs.agora.io/en/video-calling/get-started/manage-agora-account?platform=web#create-an-agora-project"> App Certificate </a>(certificate only required if enabled in the Agora Console)</li>
+<li>Azure <a href="https://azure.microsoft.com/en-us/products/ai-services/speech-to-text">SST(ASR)</a> and <a href="https://azure.microsoft.com/en-us/products/ai-services/text-to-speech">TTS</a> API keys</li>
+<li><a href="https://openai.com/index/openai-api/">OpenAI</a> API key</li>
+</ul>
+<h4 id="installation">Installation</h4>
+<ul>
+<li><a href="https://www.docker.com/">Docker</a> / <a href="https://docs.docker.com/compose/">Docker Compose</a></li>
+<li><a href="https://nodejs.org/en">Node.js(LTS) v18</a></li>
+</ul>
+<h4 id="minimum-system-requirements">Minimum system requirements</h4>
+<ul>
+<li>CPU &gt;= 2 Core</li>
+<li>RAM &gt;= 4 GB</li>
+</ul>
+<h4 id="docker-setting-on-apple-silicon">Docker setting on Apple Silicon</h4>
+<p>You will need to uncheck &quot;Use Rosetta for x86_64/amd64 emulation on Apple Silicon&quot; option for Docker if you are on Apple Silicon, otherwise the server is not going to work.</p>
+<p><img src="https://github.com/TEN-framework/docs/blob/main/assets/gif/docker_setting.gif?raw=true" alt="Docker Setting"></p>
+<h3 id="next-step">Next step</h3>
+<h4 id="1-modify-config-files">1. Modify config files</h4>
+<p>In the root of the project, use <code>cp</code> command to create <code>.env</code> from the <a href="https://github.com/TEN-framework/ten-agent/blob/main/.env.example"> .env.example </a>.</p>
+<p>It will be used to store information for <code>docker compose</code> later.</p>
+<pre class="hljs"><code><div>cp ./.env.example ./.env
+</div></code></pre>
+<h4 id="2-setup-api-keys">2. Setup API keys</h4>
+<p>Open the <code>.env</code> file and fill in the <code>keys</code> and <code>regions</code>.</p>
+<pre class="hljs"><code><div><span class="hljs-comment"># Agora App ID </span>
+<span class="hljs-comment"># Agora App Certificate(only required if enabled in the Agora Console)</span>
+AGORA_APP_ID=
+AGORA_APP_CERTIFICATE=
+
+<span class="hljs-comment"># Azure STT key and region</span>
+AZURE_STT_KEY=
+AZURE_STT_REGION=
+
+<span class="hljs-comment"># Azure TTS key and region</span>
+AZURE_TTS_KEY=
+AZURE_TTS_REGION=
+
+<span class="hljs-comment"># OpenAI API key</span>
+OPENAI_API_KEY=
+</div></code></pre>
+<h4 id="3-start-agent-development-containers">3. Start agent development containers</h4>
+<p>In the same directory, run the <code>docker compose up</code> command to compose containers:</p>
+<pre class="hljs"><code><div>docker compose up
+</div></code></pre>
+<p>Or using the <code>docker compose up -d</code> command, start the container in detached mode.(<a href="https://doc.theten.ai/ten-agent/setting_up_vscode_for_development_inside_container">more here</a>)</p>
+<pre class="hljs"><code><div>docker compose up -d
+</div></code></pre>
+<h4 id="4-enter-container-and-build-agent">4. Enter container and build agent</h4>
+<p>Open up a separate terminal window, enter the container and build the agent:</p>
+<pre class="hljs"><code><div>docker <span class="hljs-built_in">exec</span> -it ten_agent_dev bash
+
+make build
+</div></code></pre>
+<h4 id="5-start-the-server">5. Start the server</h4>
+<p>Once the build is done, <code>make run-server</code> on port <code>8080</code>:</p>
+<pre class="hljs"><code><div>make run-server
+</div></code></pre>
+<h3 id="finish-and-verify">Finish and verify</h3>
+<h4 id="ten-agent">TEN Agent</h4>
+<p>Open up <a href="http://localhost:3000">localhost:3000</a> in browser to play the TEN Agent.</p>
+<h4 id="ten-graph-designer">TEN Graph Designer</h4>
+<p>Open up another tab go to <a href="http://localhost:3001">localhost:3001</a>, and use Graph Designer to create, connect and edit extensions on canvas.</p>
+<p>Once you save the graph, you can return to <a href="http://localhost:3000">localhost:3000</a> and select the corresponding graph to view the changes.</p>
+<p><img src="https://github.com/TEN-framework/docs/blob/main/assets/gif/hello_world_python.gif?raw=true" alt="TEN Graph Designer"></p>
+<!-- <br>
+<h2>TEN Agent Comparison</h2>
+
+<div align="center">
+
+| **Features**                             | **TEN Agent** | **Pipecat** | **LiveKit:KITT** | **Vapi.ai** | **DailyBots** | **Play.ai** |
+|:----------------------------------------:|:-------:|:--------:|:-------------:|:----------------:|:----------------:|:----------------:|
+| **Vision**                               |   ✅    |    ❌    |      ❌       |     ❌     |     ❌      |     ❌       |
+| **Rich TTS Support for different languages** |   ✅    |    ❌    |      ❌       |     ❌      |     ❌      |     ❌      |
+| **Go support for extension**              |   ✅    |    ❌    |      ❌       |     ❌     |      ❌     |     ❌      |
+| **C++ support for extension**             |   ✅    |    ❌    |      ❌       |     ❌     |      ❌     |     ❌      |
+| **RAG support**                          |   ✅    |    ❌    |      ❌       |     ❌     |      ❌     |     ❌      |
+| **Workflow builder for extension**        |   ✅    |    ❌    |      ❌       |     ✅      |     ❌     |     ❌      |
+| **Rich LLM Support**                      |   ✅    |    ✅    |      ✅       |     ✅     |     ✅     |    ✅      |
+| **Python support for extension**          |   ✅    |    ✅    |      ✅       |     ✅     |     ✅      |     ✅     |
+| **Open source**                          |   ✅    |    ✅    |      ✅       |     ❌     |     ❌      |     ❌      |
+
+</div> -->
+<br>
+<br>
+<h2>Join Community</h2>
+<ul>
+<li><a href="https://discord.gg/VnPftUzAMJ">Discord</a>: Ideal for sharing your applications and engaging with the community.</li>
+<li><a href="https://github.com/TEN-framework/ten-agent/discussions">GitHub Discussion</a>: Perfect for providing feedback and asking questions.</li>
+<li><a href="https://github.com/TEN-framework/ten-agent/issues">GitHub Issues</a>: Best for reporting bugs and proposing new features. Refer to our <a href="./docs/code-of-conduct/contributing.md">contribution guidelines</a> for more details.</li>
+<li><a href="https://img.shields.io/twitter/follow/TenFramework?logo=X&amp;color=%20%23f5f5f5">X (formerly Twitter)</a>: Great for sharing your agents and interacting with the community.</li>
+</ul>
+ <br>
+ <h2>Code Contributors</h2>
+<p><a href="https://github.com/TEN-framework/ten-agent/graphs/contributors"><img src="https://contrib.rocks/image?repo=TEN-framework/ten-agent" alt="TEN"></a></p>
+<br>
+<h2>Contribution Guidelines</h2>
+<p>Contributions are welcome! Please read the <a href="./docs/code-of-conduct/contributing.md">contribution guidelines</a> first.</p>
+<br>
+<h2>License</h2>
+<p>This project is licensed under the Apache 2.0 License - see the <a href="LICENSE">LICENSE</a> file for details.</p>
+
+</body>
+
+</html>
