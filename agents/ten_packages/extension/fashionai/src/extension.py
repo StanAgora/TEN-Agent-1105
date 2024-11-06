@@ -23,11 +23,11 @@ import threading
 from datetime import datetime
 
 class FashionAIExtension(Extension):
-    app_id = ""
+    app_id = "6dfb75b0c28e4d4f9bb7121221b95a8f"
     token = ""
     channel = ""
     stream_id = 0
-    service_id = "agora"
+    service_id = "agoramultimodel"
 
     def on_init(self, ten_env: TenEnv) -> None:
         logger.info("FASHION_AI on_init *********************************************************")
