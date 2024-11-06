@@ -46,15 +46,16 @@ class FashionAIExtension(Extension):
             self.token = ten_env.get_property_string("token")
             self.channel = ten_env.get_property_string("channel")
             self.stream_id = str(ten_env.get_property_int("stream_id"))
-            self.service_id = ten_env.get_property_string("service_id")
-
+            # self.service_id = ten_env.get_property_string("service_id")
+            self.service_id= "agoramultimodel"
             logger.info(f"FASHION_AI on_start: app_id = {self.app_id}, token = {self.token}, channel = {self.channel}, stream_id = {self.stream_id}, service_id = {self.service_id}")
         except Exception as e:
             logger.warning(f"get_property err: {e}")
 
         if len(self.token) > 0:
             self.app_id = self.token
-        self.client = FashionAIClient("wss://ingress.service.fasionai.com/websocket/node7/server1", self.service_id)
+        # self.client = FashionAIClient("wss://ingress.service.fasionai.com/websocket/node7/server1", self.service_id)
+        self.client = FashionAIClient("wss://ingress.service.fasionai.com/websocket/node5/agoramultimodel", self.service_id)
 
         def thread_target():
             self.threadWebsocketLoop = asyncio.new_event_loop() 
